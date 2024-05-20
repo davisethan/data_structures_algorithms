@@ -1,5 +1,6 @@
 from data_structures.stack.stack import Stack
 
+
 class MinStack:
     def __init__(self):
         self.values = Stack()
