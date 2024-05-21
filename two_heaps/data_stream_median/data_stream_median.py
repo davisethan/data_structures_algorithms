@@ -15,6 +15,10 @@ class DataStreamMedian:
         self.min_heap = Heap()
 
     def insert(self, number):
+        """
+        time complexity O(logn)
+        space complexity O(1)
+        """
         if self.max_heap.empty() or self.min_heap.empty():
             self.max_heap.push(MaxHeapData(number))
             self.rebalance()
@@ -27,6 +31,10 @@ class DataStreamMedian:
         self.rebalance()
 
     def median(self):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if self.max_heap.size() == self.min_heap.size():
             return (self.max_heap.top().number + self.min_heap.top().number) / 2
         if self.max_heap.size() < self.min_heap.size():
@@ -34,6 +42,10 @@ class DataStreamMedian:
         return self.max_heap.top().number
 
     def rebalance(self):
+        """
+        time complexity O(logn)
+        space complexity O(1)
+        """
         if self.max_heap.size() + 2 == self.min_heap.size():
             number = self.min_heap.pop().number
             self.max_heap.push(MaxHeapData(number))
