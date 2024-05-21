@@ -7,14 +7,14 @@ class Heap:
 
     def push(self, data):
         """
-        time complexity O(1)
+        time complexity O(logn)
         space complexity O(1)
         """
         heappush(self.heap, data)
 
     def pop(self):
         """
-        time complexity O(1)
+        time complexity O(logn)
         space complexity O(1)
         """
         return heappop(self.heap)
