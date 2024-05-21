@@ -24,6 +24,9 @@ class DoublyLinkedList:
         next.prev = prev
         self.size = self.size - 1
         return node
+    
+    def empty(self):
+        return self.size == 0
 
     def __iter__(self):
         return DoublyLinkedListIterator(self.head, self.tail)
