@@ -2,6 +2,9 @@ from data_structures.doubly_linked_list.doubly_linked_list import DoublyLinkedLi
 
 
 class LfuCache:
+    """
+    least frequently used cache
+    """
     def __init__(self, capacity=float("inf")):
         self.capacity = capacity
         self.size = 0
@@ -10,6 +13,10 @@ class LfuCache:
         self.minimum_frequency = 0
 
     def get(self, key):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if key not in self.indexer:
             return -1
 
@@ -18,6 +25,10 @@ class LfuCache:
         return node.data.value
 
     def put(self, key, value):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if key in self.indexer:
             node = self.indexer[key]
             self.bump_frequency(node)
@@ -40,6 +51,10 @@ class LfuCache:
             self.size = self.size + 1
 
     def bump_frequency(self, node):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         old_frequency = node.data.frequency
         new_frequency = node.data.frequency + 1
 

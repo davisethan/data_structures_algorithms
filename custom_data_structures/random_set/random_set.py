@@ -2,11 +2,18 @@ from random import choice
 
 
 class RandomSet:
+    """
+    insert delete and get random value of set all in time complexity O(1)
+    """
     def __init__(self):
         self.store = list()
         self.indexer = dict()
 
     def insert(self, value):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if value in self.indexer:
             return False
         self.store.append(value)
@@ -15,6 +22,10 @@ class RandomSet:
         return True
 
     def delete(self, value):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if value not in self.indexer:
             return False
         index = self.indexer[value]
@@ -25,6 +36,10 @@ class RandomSet:
         return True
 
     def get_random(self):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         return choice(self.store)
 
     def __repr__(self):

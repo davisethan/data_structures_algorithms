@@ -2,12 +2,19 @@ from data_structures.doubly_linked_list.doubly_linked_list import DoublyLinkedLi
 
 
 class LruCache:
+    """
+    least recently used cache
+    """
     def __init__(self, capacity=float("inf")):
         self.capacity = capacity
         self.indexer = dict()
         self.doubly_linked_list = DoublyLinkedList()
 
     def get(self, key):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if key not in self.indexer:
             return -1
         node = self.indexer[key]
@@ -16,6 +23,10 @@ class LruCache:
         return node.data.value
 
     def set(self, key, value):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if key in self.indexer:
             node = self.indexer[key]
             node.data.value = value

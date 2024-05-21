@@ -7,6 +7,10 @@ class DoublyLinkedList:
         self.tail.prev = self.head
 
     def push(self, node):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         prev = self.head
         next = self.head.next
         node.next = next
@@ -16,6 +20,10 @@ class DoublyLinkedList:
         self.size = self.size + 1
 
     def pop(self, node=None):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         if not node:
             node = self.tail.prev
         prev = node.prev
@@ -26,6 +34,10 @@ class DoublyLinkedList:
         return node
     
     def empty(self):
+        """
+        time complexity O(1)
+        space complexity O(1)
+        """
         return self.size == 0
 
     def __iter__(self):
