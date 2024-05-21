@@ -2,7 +2,7 @@ from data_structures.doubly_linked_list.doubly_linked_list import DoublyLinkedLi
 
 
 class LruCache:
-    def __init__(self, capacity):
+    def __init__(self, capacity=float("inf")):
         self.capacity = capacity
         self.indexer = dict()
         self.doubly_linked_list = DoublyLinkedList()
