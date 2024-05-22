@@ -4,6 +4,9 @@ from data_structures.doubly_linked_list.doubly_linked_list import DoublyLinkedLi
 class LfuCache:
     """
     least frequently used cache
+
+    in a tie for the least frequently used key
+    evict the least recently used key
     """
     def __init__(self, capacity=float("inf")):
         self.capacity = capacity
