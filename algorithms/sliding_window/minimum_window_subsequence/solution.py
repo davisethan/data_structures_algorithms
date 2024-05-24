@@ -13,6 +13,7 @@ class Solution:
         i, j = 0, 0
         length, result = float("inf"), str()
 
+        # step forward
         while i < m:
             if string2[j] == string1[i]:
                 j = j + 1
@@ -23,7 +24,7 @@ class Solution:
                 high = i
                 i, j = i - 1, j - 1
 
-                # step back to start of match
+                # step backward to start of match
                 while 0 <= j:
                     if string2[j] == string1[i]:
                         j = j - 1
