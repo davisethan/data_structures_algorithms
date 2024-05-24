@@ -7,6 +7,10 @@ from collections import defaultdict
 
 class Solution:
     def longest_repeated_character_replacement(self, string, capacity):
+        """
+        time complexity O(n)
+        space complexity O(1)
+        """
         length, low, high = len(string), 0, 0
         max_frequency, frequencies = -1, defaultdict(int)
 
