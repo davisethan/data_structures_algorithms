@@ -13,7 +13,7 @@ class Solution:
         """
         length, low, high = len(string), 0, 0
         frequencies = defaultdict(int)
-        result = -1
+        result = 0
 
         for high in range(length):
             frequencies[string[high]] += 1

@@ -7,6 +7,18 @@ from algorithms.sliding_window.longest_substring_without_repeated_characters.sol
 
 
 class SolutionTestCase(TestCase):
+    def test_zero_length_string(self):
+        # Given
+        string = ""
+        solution = Solution()
+
+        # When
+        actual = solution.find_longest_substring(string)
+
+        # Then
+        expected = 0
+        self.assertEqual(actual, expected)
+
     def test_longest_window_without_repeats(self):
         # Given
         string = "abcdefgh"
