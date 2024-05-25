@@ -5,6 +5,10 @@ production algorithm
 
 class Solution:
     def minimum_size_subarray_sum(self, numbers, target):
+        """
+        time complexity O(n)
+        space complexity O(1)
+        """
         length, low, high = len(numbers), 0, 0
         current = 0
         result = float("inf")
