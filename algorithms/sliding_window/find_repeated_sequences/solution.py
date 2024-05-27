@@ -26,8 +26,8 @@ class Solution:
             hash2 = ((hash2 - indexer[string[index - length]] * base2 **
                      (length - 1)) * base2 + indexer[string[index]]) % modulo2
             if (hash1, hash2) in visited:
-                substr = string[index + 1 - length: index + 1]
-                result.add(substr)
+                substring = string[index - length + 1: index + 1]
+                result.add(substring)
             visited.add((hash1, hash2))
 
         return result
