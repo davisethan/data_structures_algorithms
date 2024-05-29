@@ -13,11 +13,14 @@ class Solution:
         """
         start_times, end_times = Heap(), Heap()
 
+        # sort tasks by earliest start time
         for task in tasks:
             start_times.push(task)
         _, end = start_times.pop()
         end_times.push(end)
 
+        # merge tasks by earliest end time
+        # and next start time
         while not start_times.empty():
             start, end = start_times.pop()
             if end_times.top() <= start:
