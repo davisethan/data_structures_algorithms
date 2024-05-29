@@ -9,6 +9,11 @@ from data_structures.heap.heap import Heap
 
 class Solution:
     def median_sliding_window(self, nums, k):
+        """
+        time complexity O(nlogn)
+        space complexity O(n)
+        """
+        n = len(nums)
         low, high = Heap(), Heap()
         visited = defaultdict(int)
         result = list()
@@ -26,7 +31,7 @@ class Solution:
             result.append(low.top().data)
 
         # slide window
-        for i in range(k, len(nums)):
+        for i in range(k, n):
 
             # stage pop of low index of window
             balance = 0
