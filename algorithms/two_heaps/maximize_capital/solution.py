@@ -7,6 +7,10 @@ from data_structures.heap.heap import Heap
 
 class Solution:
     def maximum_capital(self, c, k, capitals, profits):
+        """
+        time complexity O(nlogn)
+        space complexity O(n)
+        """
         n = len(capitals)
         min_capitals, max_profits = Heap(), Heap()
         result = c
