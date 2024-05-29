@@ -48,26 +48,26 @@ class DataStreamMedian:
             self.high.push(MinHeapData(data))
 
     def __repr__(self):
-        return f"(max_heap={self.max_heap}, min_heap={self.min_heap})"
+        return f"(maxheap={self.low}, minheap={self.high})"
 
 
 class MinHeapData:
-    def __init__(self, number):
-        self.number = number
+    def __init__(self, data):
+        self.data = data
 
     def __lt__(self, other):
-        return self.number < other.number
+        return self.data < other.data
 
     def __repr__(self):
-        return str(self.number)
+        return str(self.data)
 
 
 class MaxHeapData:
-    def __init__(self, number):
-        self.number = number
+    def __init__(self, data):
+        self.data = data
 
     def __lt__(self, other):
-        return other.number < self.number
+        return other.data < self.data
 
     def __repr__(self):
-        return str(self.number)
+        return str(self.data)

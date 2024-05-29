@@ -3,7 +3,7 @@ unit tests
 """
 
 from unittest import TestCase
-from two_heaps.data_stream_median.data_stream_median import DataStreamMedian
+from algorithms.two_heaps.data_stream_median.data_stream_median import DataStreamMedian
 
 
 class DataStreamMedianTestCase(TestCase):
@@ -17,9 +17,9 @@ class DataStreamMedianTestCase(TestCase):
         actual = str(data_stream_median)
 
         # Then
-        expected_max_heap = [53, 51]
-        expected_min_heap = [55, 57, 59]
-        expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
+        expected_maxheap = [55, 53, 51]
+        expected_minheap = [57, 59]
+        expected = f"(maxheap={expected_maxheap}, minheap={expected_minheap})"
         self.assertEqual(actual, expected)
 
     def test_median_strictly_increasing_odd_parity_numbers(self):
@@ -45,9 +45,9 @@ class DataStreamMedianTestCase(TestCase):
         actual = str(data_stream_median)
 
         # Then
-        expected_max_heap = [55, 53, 51]
-        expected_min_heap = [57, 59]
-        expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
+        expected_maxheap = [55, 53, 51]
+        expected_minheap = [57, 59]
+        expected = f"(maxheap={expected_maxheap}, minheap={expected_minheap})"
         self.assertEqual(actual, expected)
 
     def test_median_strictly_decreasing_odd_parity_numbers(self):
@@ -73,9 +73,9 @@ class DataStreamMedianTestCase(TestCase):
         actual = str(data_stream_median)
 
         # Then
-        expected_max_heap = [55, 53, 51]
-        expected_min_heap = [57, 59, 61]
-        expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
+        expected_maxheap = [55, 53, 51]
+        expected_minheap = [57, 59, 61]
+        expected = f"(maxheap={expected_maxheap}, minheap={expected_minheap})"
         self.assertEqual(actual, expected)
 
     def test_median_stricly_increasing_even_parity_numbers(self):
@@ -101,9 +101,9 @@ class DataStreamMedianTestCase(TestCase):
         actual = str(data_stream_median)
 
         # Then
-        expected_max_heap = [55, 53, 51]
-        expected_min_heap = [57, 59, 61]
-        expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
+        expected_maxheap = [55, 53, 51]
+        expected_minheap = [57, 59, 61]
+        expected = f"(maxheap={expected_maxheap}, minheap={expected_minheap})"
         self.assertEqual(actual, expected)
 
     def test_median_striclty_decreasing_even_parity_numbers(self):
