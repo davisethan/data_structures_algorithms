@@ -1,33 +1,29 @@
+"""
+production algorithm
+"""
+
 from data_structures.heap.heap import Heap
 
 
 class DataStreamMedian:
-    """
-    store a stream of numbers and retrieve the median
-    of all numbers seen so far in time complexity O(1)
-
-    at least one number will be stored
-    before the median is requested
-    """
-
     def __init__(self):
-        self.max_heap = Heap()
-        self.min_heap = Heap()
+        self.low = Heap()
+        self.high = Heap()
 
     def insert(self, number):
         """
         time complexity O(logn)
         space complexity O(1)
         """
-        if self.max_heap.empty() or self.min_heap.empty():
-            self.max_heap.push(MaxHeapData(number))
+        if self.low.empty() or self.high.empty():
+            self.low.push(MaxHeapData(number))
             self.rebalance()
             return
-        if number < self.max_heap.top().number:
-            self.max_heap.push(MaxHeapData(number))
+        if number <= self.low.top().data:
+            self.low.push(MaxHeapData(number))
             self.rebalance()
             return
-        self.min_heap.push(MinHeapData(number))
+        self.high.push(MinHeapData(number))
         self.rebalance()
 
     def median(self):
@@ -35,23 +31,21 @@ class DataStreamMedian:
         time complexity O(1)
         space complexity O(1)
         """
-        if self.max_heap.size() == self.min_heap.size():
-            return (self.max_heap.top().number + self.min_heap.top().number) / 2
-        if self.max_heap.size() < self.min_heap.size():
-            return self.min_heap.top().number
-        return self.max_heap.top().number
+        if self.low.size() == self.high.size():
+            return self.low.top().data / 2 + self.high.top().data / 2
+        return self.low.top().data
 
     def rebalance(self):
         """
         time complexity O(logn)
         space complexity O(1)
         """
-        if self.max_heap.size() + 2 == self.min_heap.size():
-            number = self.min_heap.pop().number
-            self.max_heap.push(MaxHeapData(number))
-        if self.min_heap.size() + 2 == self.max_heap.size():
-            number = self.max_heap.pop().number
-            self.min_heap.push(MinHeapData(number))
+        if self.low.size() < self.high.size():
+            data = self.high.pop().data
+            self.low.push(MaxHeapData(data))
+        if self.high.size() + 1 < self.low.size():
+            data = self.low.pop().data
+            self.high.push(MinHeapData(data))
 
     def __repr__(self):
         return f"(max_heap={self.max_heap}, min_heap={self.min_heap})"

@@ -1,9 +1,13 @@
+"""
+unit tests
+"""
+
 from unittest import TestCase
 from two_heaps.data_stream_median.data_stream_median import DataStreamMedian
 
 
 class DataStreamMedianTestCase(TestCase):
-    def test_insert_five_strictly_increasing_numbers(self):
+    def test_insert_strictly_increasing_odd_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [51, 53, 55, 57, 59]
@@ -18,7 +22,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
         self.assertEqual(actual, expected)
 
-    def test_median_five_strictly_increasing_numbers(self):
+    def test_median_strictly_increasing_odd_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [51, 53, 55, 57, 59]
@@ -31,7 +35,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = 55
         self.assertEqual(actual, expected)
 
-    def test_insert_five_strictly_decreasing_numbers(self):
+    def test_insert_strictly_decreasing_odd_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [59, 57, 55, 53, 51]
@@ -46,7 +50,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
         self.assertEqual(actual, expected)
 
-    def test_median_five_strictly_decreasing_numbers(self):
+    def test_median_strictly_decreasing_odd_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [59, 57, 55, 53, 51]
@@ -59,7 +63,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = 55
         self.assertEqual(actual, expected)
 
-    def test_insert_six_stricly_increasing_numbers(self):
+    def test_insert_stricly_increasing_even_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [51, 53, 55, 57, 59, 61]
@@ -74,7 +78,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
         self.assertEqual(actual, expected)
 
-    def test_median_six_stricly_increasing_numbers(self):
+    def test_median_stricly_increasing_even_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [51, 53, 55, 57, 59, 61]
@@ -87,7 +91,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = 56
         self.assertEqual(actual, expected)
 
-    def test_insert_six_strictly_decreasing_numbers(self):
+    def test_insert_strictly_decreasing_even_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [61, 59, 57, 55, 53, 51]
@@ -102,7 +106,7 @@ class DataStreamMedianTestCase(TestCase):
         expected = f"(max_heap={expected_max_heap}, min_heap={expected_min_heap})"
         self.assertEqual(actual, expected)
 
-    def test_median_six_striclty_decreasing_numbers(self):
+    def test_median_striclty_decreasing_even_parity_numbers(self):
         # Given
         data_stream_median = DataStreamMedian()
         numbers = [61, 59, 57, 55, 53, 51]
