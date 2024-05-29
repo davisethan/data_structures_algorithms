@@ -4,6 +4,7 @@ production algorithm
 
 from data_structures.heap.heap import Heap
 
+
 class Solution:
     def minimum_machines(self, tasks):
         """

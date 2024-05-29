@@ -5,6 +5,7 @@ unit tests
 from unittest import TestCase
 from algorithms.two_heaps.schedule_tasks_on_minimum_machines.solution import Solution
 
+
 class SolutionTestCase(TestCase):
     def test_sequential_tasks(self):
         # Given
