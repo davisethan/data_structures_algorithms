@@ -32,7 +32,7 @@ class DoublyLinkedList:
         next.prev = prev
         self.size = self.size - 1
         return node
-    
+
     def empty(self):
         """
         time complexity O(1)
