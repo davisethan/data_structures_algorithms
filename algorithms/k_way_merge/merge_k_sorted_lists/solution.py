@@ -3,46 +3,33 @@ production algorithm
 """
 
 from data_structures.linked_list.linked_list import LinkedList, LinkedListNode
+from data_structures.heap.heap import Heap
 
 
 class Solution:
     def merge_k_lists(self, lists):
         """
         time complexity O(nlogk)
-        space complexity O(n)
+        space complexity O(k)
         """
-        if len(lists) == 0:
-            return None
-        return self.merge_k_lists_helper(lists)
+        smallest = Heap()
+        [smallest.push(MinHeapData(lists[i].head.next))
+         for i in range(len(lists)) if lists[i].head.next]
+        sentinel = LinkedListNode(None)
+        cur = sentinel
 
-    def merge_k_lists_helper(self, lists):
-        """
-        time complexity O(nlogk)
-        space complexity O(n)
-        """
-        if len(lists) == 1:
-            return lists[0]
-        return self.merge(
-            self.merge_k_lists_helper(lists[:len(lists) // 2]),
-            self.merge_k_lists_helper(lists[len(lists) // 2:]))
-
-    def merge(self, list1, list2):
-        """
-        time complexity O(n)
-        space complexity O(1)
-        """
-        sentinel = LinkedListNode()
-        cur, cur1, cur2 = sentinel, list1.head.next, list2.head.next
-
-        while cur1 and cur2:
-            if cur1.data < cur2.data:
-                cur.next, cur, cur1 = cur1, cur1, cur1.next
-            else:
-                cur.next, cur, cur2 = cur2, cur2, cur2.next
-
-        if cur1:
-            cur.next = cur1
-        else:
-            cur.next = cur2
+        while not smallest.empty():
+            node = smallest.pop().node
+            cur.next, cur = node, node
+            if node and node.next:
+                smallest.push(MinHeapData(node.next))
 
         return LinkedList(sentinel)
+
+
+class MinHeapData:
+    def __init__(self, node):
+        self.node = node
+
+    def __lt__(self, other):
+        return self.node.data < other.node.data
