@@ -6,8 +6,8 @@ production algorithm
 class Solution:
     def merge_sorted(self, nums1, m, nums2, n):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(n)
+        space complexity O(1)
         """
         i, j, k = m - 1, n - 1, m + n - 1
 
