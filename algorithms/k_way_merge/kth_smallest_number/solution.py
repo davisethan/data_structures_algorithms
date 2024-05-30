@@ -17,12 +17,12 @@ class Solution:
         for i in range(len(lists)):
             if 0 < len(lists[i]):
                 smallest.push(MinHeapData(lists[i][pointers[i]], i))
-        i, result = 0, list()
+        i, result = 0, None
 
         while not smallest.empty() and i < k:
             # add number of list from heap to result
             number, index = smallest.pop()
-            result.append(number)
+            result = number
 
             # add next number of list to heap
             pointers[index] = pointers[index] + 1
@@ -32,9 +32,9 @@ class Solution:
 
             i = i + 1
 
-        if len(result) == 0:
+        if result is None:
             return 0
-        return result[len(result) - 1]
+        return result
 
 
 class MinHeapData:
