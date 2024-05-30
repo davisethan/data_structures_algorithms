@@ -16,9 +16,14 @@ class Solution:
         smallest = Heap()
         [smallest.push(MinHeapData(list1[i] + list2[0], i, 0))
          for i in range(len(list1))]
-        i, result = 0, list()
+        result = list()
 
-        while not smallest.empty() and i < k:
+        for _ in range(k):
+            if smallest.empty():
+                break
+
+            # add values of first and second list
+            # to result seen so far
             _, index1, index2 = smallest.pop()
             result.append((list1[index1], list2[index2]))
 
@@ -27,8 +32,6 @@ class Solution:
             if index2 + 1 < len(list2):
                 smallest.push(MinHeapData(
                     list1[index1] + list2[index2 + 1], index1, index2 + 1))
-
-            i = i + 1
 
         return result
 
