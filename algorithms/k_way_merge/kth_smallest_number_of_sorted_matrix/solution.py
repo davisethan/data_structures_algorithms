@@ -7,5 +7,9 @@ from algorithms.k_way_merge.kth_smallest_number.solution import Solution as Solu
 
 class Solution:
     def kth_smallest_number(self, matrix, k):
+        """
+        time complexity O(klogn)
+        space complexity O(n)
+        """
         solution2 = Solution2()
         return solution2.k_smallest_number(matrix, k)
