@@ -19,7 +19,7 @@ class KthLargest:
     def add(self, value):
         """
         time complexity O(logk)
-        space complexity O(1)
+        space complexity O(k)
         """
         self.heap.push(value)
         if self.heap.size() > self.k:
