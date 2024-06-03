@@ -9,8 +9,8 @@ from data_structures.heap.heap import Heap
 class Solution:
     def top_k_frequent(self, words, k):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(nlogk)
+        space complexity O(k)
         """
         smallest = Heap()
         counter = Counter(words)
