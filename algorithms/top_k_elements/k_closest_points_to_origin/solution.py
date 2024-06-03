@@ -21,7 +21,7 @@ class Solution:
         result = list()
         for i in range(k):
             _, point = closest.pop()
-            result.append(point)
+            result.append((point.x, point.y))
 
         return result
 
