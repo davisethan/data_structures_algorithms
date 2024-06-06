@@ -9,17 +9,24 @@ class Solution:
         time complexity O(n * n!)
         space complexity O(n)
         """
-        current, result = str(), list()
-        self.find_permutations_helper(word, current, result)
+        visited, current, result = set(), list(), list()
+        self.find_permutations_helper(word, visited, current, result)
         return result
 
-    def find_permutations_helper(self, word, current, result):
+    def find_permutations_helper(self, word, visited, current, result):
         """
         time complexity O(n * n!)
         space complexity O(n)
         """
-        if len(word) == 0:
-            result.append(current)
+        if len(current) == len(word):
+            result.append(str().join(current))
+            return
+
         for i in range(len(word)):
-            self.find_permutations_helper(
-                word[:i] + word[i+1:], current + word[i], result)
+            if word[i] in visited:
+                continue
+            visited.add(word[i])
+            current.append(word[i])
+            self.find_permutations_helper(word, visited, current, result)
+            current.pop()
+            visited.remove(word[i])
