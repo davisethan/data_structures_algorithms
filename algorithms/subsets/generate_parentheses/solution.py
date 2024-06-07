@@ -6,7 +6,7 @@ production algorithm
 class Solution:
     def generate_combinations(self, n):
         """
-        time complexity O(4^n)
+        time complexity O(n * 4^n)
         space complexity O(n)
         """
         opened, closed = n, n
@@ -16,7 +16,7 @@ class Solution:
 
     def generate_combinations_helper(self, opened, closed, current, result):
         """
-        time complexity O(4^n)
+        time complexity O(n * 4^n)
         space complexity O(n)
         """
         # generated more closed than opened parentheses
