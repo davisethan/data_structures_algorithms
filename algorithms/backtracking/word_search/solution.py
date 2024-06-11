@@ -24,7 +24,7 @@ class Solution:
 
     def word_search_helper(self, grid, m, n, word, k, i, row, col, directions, result):
         """
-        time complexity O(m * n * 4^k)
+        time complexity O(4^k)
         space complexity O(k)
         """
         # base case
