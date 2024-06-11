@@ -6,8 +6,8 @@ production algorithm
 class Solution:
     def flood_fill(self, grid, sr, sc, target):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(mn)
+        space complexity O(mn)
         """
         if grid[sr][sc] == target:
             return grid
@@ -20,8 +20,8 @@ class Solution:
 
     def flood_fill_helper(self, grid, m, n, sr, sc, target, origin, directions):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(mn)
+        space complexity O(mn)
         """
         # base case
         if sr < 0 or sr == m:
