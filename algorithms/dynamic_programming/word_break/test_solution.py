@@ -20,7 +20,6 @@ class SolutionTestCase(TestCase):
         expected = True
         self.assertEqual(actual, expected)
 
-    # @skip("")
     def test_nonexistent_solution(self):
         # Given
         string = "catsandogsandbirds"
