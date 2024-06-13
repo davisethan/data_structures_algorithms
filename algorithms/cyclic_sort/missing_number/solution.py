@@ -13,7 +13,7 @@ class Solution:
         n, i = len(numbers), 0
         while i < n:
             j = numbers[i]
-            if not i == j and 0 <= j < n:
+            if 0 <= j < n and not numbers[i] == numbers[j]:
                 numbers[j], numbers[i] = numbers[i], numbers[j]
             else:
                 i += 1
