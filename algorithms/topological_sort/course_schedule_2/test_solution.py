@@ -3,7 +3,7 @@ unit tests
 """
 
 from unittest import TestCase
-from algorithms.topological_sort.course_schedule.solution import Solution
+from algorithms.topological_sort.course_schedule_2.solution import Solution
 
 
 class SolutionTestCase(TestCase):
