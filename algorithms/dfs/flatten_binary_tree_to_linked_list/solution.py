@@ -2,6 +2,7 @@
 production algorithm
 """
 
+
 class Solution:
     def flatten_tree(self, root):
         """
