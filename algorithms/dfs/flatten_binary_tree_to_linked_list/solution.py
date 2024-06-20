@@ -2,9 +2,6 @@
 production algorithm
 """
 
-from data_structures.binary_tree.binary_tree import BinaryTreeNode
-
-
 class Solution:
     def flatten_tree(self, root):
         """
