@@ -6,16 +6,16 @@ production algorithm
 class Solution:
     def mirror_binary_tree(self, root):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(n)
+        space complexity O(n)
         """
         self.mirror_binary_tree_helper(root)
         return root
 
     def mirror_binary_tree_helper(self, root):
         """
-        time complexity XXX
-        space complexity XXX
+        time complexity O(n)
+        space complexity O(n)
         """
         if root is None:
             return
