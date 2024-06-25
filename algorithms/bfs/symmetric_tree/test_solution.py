@@ -66,7 +66,7 @@ class SolutionTestCase(TestCase):
         expected = True
         self.assertEqual(actual, expected)
 
-    def test_complete_binary_tree_succeeds(self):
+    def test_perfect_binary_tree_succeeds(self):
         # Given
         root = BinaryTreeNode(1)
         root.left = BinaryTreeNode(3)
