@@ -30,6 +30,6 @@ class FrequencyStack:
             self.stacks.pop()
         self.frequencies[value] -= 1
         return value
-    
+
     def __repr__(self):
         return str(self.stacks)
