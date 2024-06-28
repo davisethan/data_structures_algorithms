@@ -57,12 +57,9 @@ class UnionFind:
         """
         rootx = self.find(x)
         rooty = self.find(y)
-
         if not rootx == rooty:
             if self.size[rootx] < self.size[rooty]:
-                self.parent[rootx] = rooty
-                self.size[rooty] += self.size[rootx]
-            else:
-                self.parent[rooty] = rootx
-                self.size[rootx] += self.size[rooty]
+                rooty, rootx = rootx, rooty
+            self.parent[rooty] = rootx
+            self.size[rootx] += self.size[rooty]
             self.count -= 1
