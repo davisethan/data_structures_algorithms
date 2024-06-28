@@ -26,9 +26,11 @@ class Solution:
             for column in range(n):
                 if grid[row][column] == land:
                     if row < m - 1 and grid[row + 1][column] == land:
-                        unionfind.union(row * n + column, (row + 1) * n + column)
+                        unionfind.union(row * n + column,
+                                        (row + 1) * n + column)
                     if column < n - 1 and grid[row][column + 1] == land:
-                        unionfind.union(row * n + column, row * n + (column + 1))
+                        unionfind.union(row * n + column,
+                                        row * n + (column + 1))
 
         return unionfind.count
 
