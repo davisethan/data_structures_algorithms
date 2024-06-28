@@ -38,7 +38,7 @@ class Solution:
 class UnionFind:
     def __init__(self, size):
         self.parent = [n for n in range(size + 1)]
-        self.rank = [1 for _ in range(size + 1)]
+        self.size = [1 for _ in range(size + 1)]
         self.count = size
 
     def find(self, x):
@@ -59,11 +59,10 @@ class UnionFind:
         rooty = self.find(y)
 
         if not rootx == rooty:
-            if self.rank[rootx] < self.rank[rooty]:
+            if self.size[rootx] < self.size[rooty]:
                 self.parent[rootx] = rooty
-            elif self.rank[rooty] < self.rank[rootx]:
-                self.parent[rooty] = rootx
+                self.size[rooty] += self.size[rootx]
             else:
                 self.parent[rooty] = rootx
-                self.rank[rootx] += 1
+                self.size[rootx] += self.size[rooty]
             self.count -= 1
