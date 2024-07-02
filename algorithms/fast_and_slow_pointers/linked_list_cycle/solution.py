@@ -12,13 +12,10 @@ class Solution:
         space complexity O(1)
         """
         sentinel = LinkedListNode(None, head)
-        if not sentinel.next:
+        if not sentinel.next or not sentinel.next.next:
             return False
-        if not sentinel.next.next:
-            return False
+        slow, fast = sentinel.next, sentinel.next.next
 
-        slow = sentinel.next
-        fast = sentinel.next.next
         while not slow == fast and fast.next and fast.next.next:
             slow = slow.next
             fast = fast.next.next
